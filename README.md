@@ -1,13 +1,19 @@
-# NodeJs Rest Api connectin to mysql database
+# NodeJs Shopping Cart rest Api connecting to mysql database
 Its an application which connects to a mysql database and performs crud operations.
-Implemented using NodeJs
+Implemented using `express` and `mysql2`
 
 ---
 
+## Implemented
+- User router, products router, cart router
+- Clean code
+- Integration tests for all the router endpoints
+
 ## TODO's
-- Refactor code to MVC architecture
-- Implement Logger Middleware
-- Implement user authentication using JWT
+- Logger Middleware
+- User authentication using JWT
+- Authorisation Middleware
+- Error handler
 - Any other thought that comes through
   
   ---
@@ -15,7 +21,9 @@ Implemented using NodeJs
 ## Environment Variables
 Make sure you define all this environment variables in your `.env` file.
 1. DATABASE_NAME=test_db
-1. TABLE_NAME=users_table
+1. USER_TABLE=users_table
+1. PRODUCT_TABLE=products_table
+1. CART_TABLE=cart_table
 1. HOST=localhost
 1. DB_USER=root
 1. DB_PASSWORD=password
@@ -33,22 +41,6 @@ Make sure you define all this environment variables in your `.env` file.
 However at first when you run a get request your rows will be an empty array.
 
 ---
-
-### Sample output
-`screenshots` folder contains all the screenshots to see how it works using `curl` tool.
-The commands run are as follows:
-1. `GET` REQUEST: 
-   - `curl localhost:4000 | jq`
-2. `GET/:id` REQUEST: 
-   - `curl localhost:4000/1 | jq`
-3. `POST` REQUEST: 
-   - `curl -X POST -H "Content-Type: application/json" -d '{"name":"Karim Benzema", "email": "karimb@gmail.com", "age": 34}' localhost:4000 | jq`
-4. `PUT/:id` REQUEST: 
-    - `curl -X PUT -H "Content-Type: application/json" -d '{"name":"Karim Benzema", "email":"kbenzema@gmail.com", "age": 34}' localhost:4000/4 | jq`
-5. `DELETE/:id` REQUEST: 
-   - `curl -X DELETE localhost:4000/4 | jq`
-
-
 
 
 More features cominng...
